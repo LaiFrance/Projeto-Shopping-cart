@@ -1,3 +1,7 @@
+const addCarrinho = document.querySelectorAll('.item__add');
+const buttonLimparCar = document.querySelector('.empty-cart');
+const listaCarrinho = document.querySelector('.cart__items');
+
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
