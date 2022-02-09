@@ -1,6 +1,30 @@
-const addCarrinho = document.querySelectorAll('.item__add');
-const buttonLimparCar = document.querySelector('.empty-cart');
-const listaCarrinho = document.querySelector('.cart__items');
+// const { fetchItem } = require('./helpers/fetchItem');
+
+// const buttonLimparCar = document.querySelector('.empty-cart');
+// const listaCarrinho = document.querySelector('.cart__items');
+
+//
+
+// requisito 3- falta fazer
+function cartItemClickListener(event) {}
+
+function createCartItemElement({ sku, name, salePrice }) {
+  const li = document.createElement('li');
+  li.className = 'cart__item';
+  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.addEventListener('click', cartItemClickListener);
+  return li;
+}
+// REQUISITO 2
+async function addCartItemElement(event) {
+  const element = event.target.parentNode.firstChild.innerText; // texto com caracteristicas dos itens
+  const idItem = await fetchItem(element);
+  const { id, title, price } = idItem;
+  const selectitem = document.querySelector('.cart__items');
+  selectitem.appendChild(
+    createCartItemElement({ sku: id, name: title, salePrice: price }),
+  );
+}
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -15,7 +39,7 @@ function createCustomElement(element, className, innerText) {
   e.innerText = innerText;
   return e;
 }
-
+// requisito 2 adicionando função ao botão
 function createProductItemElement({ sku, name, image }) {
   const section = document.createElement('section');
   section.className = 'item';
@@ -23,29 +47,21 @@ function createProductItemElement({ sku, name, image }) {
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(
-    createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'),
+  // section.appendChild(
+  // createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'),);
+  // add botao função
+  const botaoCarrinho = createCustomElement(
+    // criando botao adicionar carrinho
+    'button',
+    'item__add',
+    'Adicionar ao carrinho!',
   );
-
+  botaoCarrinho.addEventListener('click', addCartItemElement); // linha 17 //evento click
+  section.appendChild(botaoCarrinho);
   return section;
 }
 
-function getSkuFromProductItem(item) {
-  return item.querySelector('span.item__sku').innerText;
-}
-
-function cartItemClickListener(event) {
-  // coloque seu código aqui
-}
-
-function createCartItemElement({ sku, name, salePrice }) {
-  const li = document.createElement('li');
-  li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
-  return li;
-}
-
+// REQUISITO 1
 async function listadeProdutos() {
   const produto = await fetchProducts('computador');
   const selecionartitem = document.querySelector('.items');
@@ -56,6 +72,20 @@ async function listadeProdutos() {
   });
 }
 
-listadeProdutos();
+function getSkuFromProductItem(item) {
+  return item.querySelector('span.item__sku').innerText;
+}
 
-window.onload = () => {};
+// REQUISITO 6 LIMPAR CARRINHO DE COMPRAS // ESVAZIAR LISTA
+const ol = document.querySelector('ol');
+const pegarbotao = document.querySelector('.empty-cart'); // BOTAO ESVAZIAR CARRINHO O botão deve obrigatoriamente, ter a classe empty-cart.
+
+function limparButton() {
+  // função marcar lista e limpar ela
+  ol.innerHTML = '';
+}
+pegarbotao.addEventListener('click', limparButton);
+
+window.onload = () => {
+  listadeProdutos();
+};
