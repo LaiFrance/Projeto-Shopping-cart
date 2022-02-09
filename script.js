@@ -5,8 +5,12 @@
 
 //
 
-// requisito 3- falta fazer
-function cartItemClickListener(event) {}
+// REQUISITO 3 COM REFERENCIA A https://qastack.com.br/programming/5933157/how-to-remove-an-html-element-using-
+// Ao clicar no produto no carrinho de compra, ele deve ser removido
+
+function cartItemClickListener(event) {
+  event.target.parentNode.removeChild(event.target);
+}
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
