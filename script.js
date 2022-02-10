@@ -90,6 +90,22 @@ function limparButton() {
 }
 pegarbotao.addEventListener('click', limparButton);
 
+// REQUISITO 7 Adicione um texto de "carregando" durante uma requisição à API
+function carregando() {
+  const h1 = document.createElement('h1');
+  h1.innerText = 'carregando...';
+  h1.className = 'loading';
+  document.querySelector('.items').appendChild(h1);
+}
+function removecarregando() {
+  setTimeout(function () {
+    const h1 = document.querySelector('h1');
+    h1.remove();
+    }, 2000);
+}
+
 window.onload = () => {
+  carregando();
+  removecarregando();
   listadeProdutos();
 };

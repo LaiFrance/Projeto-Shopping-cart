@@ -119,7 +119,7 @@ body {
 }
 
 .item .item__add {
-  background-color: rgb(5, 52, 219);
+  background-color: rgb(29, 95, 23);
   border: 0;
   cursor: pointer;
   margin: 0;
@@ -144,6 +144,15 @@ body {
   width: 170px;
   height: 35px;
   margin: 0 auto;
-  border: 2px solid rgb(5, 52, 219);
+  border: 2px solid rgb(10, 117, 51);
   background-color: rgb(249, 249, 246);
+}
+
+.loading {
+  background-color: rgb(16, 114, 57);
+  border:none; 
+  color: white;
+  padding:12px 24px; 
+  font-size: 16px; 
+  height: 40px;
 }
