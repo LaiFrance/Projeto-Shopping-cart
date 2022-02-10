@@ -43,7 +43,7 @@ body {
 }
 
 .container-cartTitle:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   right: 61.5%;
@@ -55,7 +55,7 @@ body {
 }
 
 .container-cartTitle:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 30px;
   right: 61.5%;
@@ -150,9 +150,9 @@ body {
 
 .loading {
   background-color: rgb(16, 114, 57);
-  border:none; 
+  border: none;
   color: white;
-  padding:12px 24px; 
-  font-size: 16px; 
+  padding: 12px 24px;
+  font-size: 16px;
   height: 40px;
 }
