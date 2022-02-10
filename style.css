@@ -11,7 +11,7 @@ body {
 
 .header {
   position: relative;
-  background-color: rgb(3, 52, 45);
+  background-image: url(gif/matrix.gif);
   display: flex;
   align-items: center;
   width: 100%;
@@ -97,7 +97,7 @@ body {
   height: auto;
   margin: 5px;
   width: 200px;
-  border: 2px solid rgb(234, 234, 233);
+  border: 2px solid rgb(46, 80, 55);
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -149,10 +149,17 @@ body {
 }
 
 .loading {
-  background-color: rgb(16, 114, 57);
+  background-image:url(gif/matrix.gif);
+  text-align: center;
   border: none;
+  border-radius: 10px;
   color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+  width: 800px;
+}
+
+li{
+  background-color: rgb(53, 172, 58);
+  padding-top: 1cm;
 }
