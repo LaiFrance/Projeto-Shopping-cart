@@ -43,7 +43,7 @@ body {
 }
 
 .container-cartTitle:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 15px;
   right: 61.5%;
@@ -55,7 +55,7 @@ body {
 }
 
 .container-cartTitle:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 30px;
   right: 61.5%;
