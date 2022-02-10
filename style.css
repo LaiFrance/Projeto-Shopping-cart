@@ -11,7 +11,7 @@ body {
 
 .header {
   position: relative;
-  background-image: url(gif/matrix.gif);
+  background-image: url('gif/matrix.gif');
   display: flex;
   align-items: center;
   width: 100%;
@@ -43,7 +43,7 @@ body {
 }
 
 .container-cartTitle:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 15px;
   right: 61.5%;
@@ -55,7 +55,7 @@ body {
 }
 
 .container-cartTitle:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 30px;
   right: 61.5%;
@@ -149,7 +149,7 @@ body {
 }
 
 .loading {
-  background-image:url(gif/matrix.gif);
+  background-image: url('gif/matrix.gif');
   text-align: center;
   border: none;
   border-radius: 10px;
@@ -159,7 +159,7 @@ body {
   width: 800px;
 }
 
-li{
+li { 
   background-color: rgb(53, 172, 58);
   padding-top: 1cm;
 }
